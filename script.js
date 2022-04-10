@@ -16,6 +16,8 @@ function choice() {
     }
     else {
     }
+  
+  var lowerconfirm = window.confirm("Do you want to add lowercase letters?")
   console.log("is this working")
 }
 
