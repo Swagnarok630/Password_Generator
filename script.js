@@ -35,29 +35,84 @@ console.log(randomNumber()); // get rid of after finish coding. Only here to con
 console.log(randomSpecial()); // get rid of after finish coding. Only here to confirm on the console
 
 // Creating function to ask user for parameters
-function choice() {
-  var passlength = window.prompt("Pick a password character length between 8 and 128");
-      if (passlength < 8 || passlength > 128) {
-      window.alert("That is an incorrect value, please start over")
-      return;
-    }
-    else {
-      var lowerchoice = window.confirm("Do you want to include lowercase letters?")
-      var upperchoice = window.confirm("Do you want to include uppercase letters?")
-      var numberchoice = window.confirm("Do you want to include numbers?")
-      var specialchoice = window.confirm("Do you want to include special characters?")
-    }
-    
-  console.log(passlength) // get rid of after finish coding. Only here to confirm on the console
-  console.log(lowerchoice) // get rid of after finish coding. Only here to confirm on the console
-  console.log(upperchoice) // get rid of after finish coding. Only here to confirm on the console
-  console.log(numberchoice) // get rid of after finish coding. Only here to confirm on the console
-  console.log(specialchoice) // get rid of after finish coding. Only here to confirm on the console
- return;
-}
+// function choice() {
+//   var passlength = window.prompt("Pick a password character length between 8 and 128");
+//       if (passlength < 8 || passlength > 128) {
+//       window.alert("That is an incorrect value, please start over")
+//     }
+//     else {
+//       var lowerchoice = window.confirm("Do you want to include lowercase letters?")
+//       var upperchoice = window.confirm("Do you want to include uppercase letters?")
+//       var numberchoice = window.confirm("Do you want to include numbers?")
+//       var specialchoice = window.confirm("Do you want to include special characters?")
+//         if (lowerchoice, upperchoice, numberchoice, specialchoice === false) {
+//           window.alert("You must select at least one criteria, plese start over")
+//         }
+//         else {
+//         }
+//     }
+
+//   console.log(passlength) // get rid of after finish coding. Only here to confirm on the console
+//   console.log(lowerchoice) // get rid of after finish coding. Only here to confirm on the console
+//   console.log(upperchoice) // get rid of after finish coding. Only here to confirm on the console
+//   console.log(numberchoice) // get rid of after finish coding. Only here to confirm on the console
+//   console.log(specialchoice) // get rid of after finish coding. Only here to confirm on the console
+
+// }
 
 // Defining function for generatePassword
 function generatePassword() {
+    var passlength = window.prompt("Pick a password character length between 8 and 128");
+        if (passlength < 8 || passlength > 128) {
+        window.alert("That is an incorrect value, please start over")
+      }
+      else {
+        var lowerchoice = window.confirm("Do you want to include lowercase letters?")
+        var upperchoice = window.confirm("Do you want to include uppercase letters?")
+        var numberchoice = window.confirm("Do you want to include numbers?")
+        var specialchoice = window.confirm("Do you want to include special characters?")
+          if (lowerchoice === false && upperchoice === false && numberchoice === false && specialchoice === false) {
+            window.alert("You must select at least one criteria, plese start over")
+          }
+          else {
+          }
+      }
+  
+    console.log(passlength) // get rid of after finish coding. Only here to confirm on the console
+    console.log(lowerchoice) // get rid of after finish coding. Only here to confirm on the console
+    console.log(upperchoice) // get rid of after finish coding. Only here to confirm on the console
+    console.log(numberchoice) // get rid of after finish coding. Only here to confirm on the console
+    console.log(specialchoice) // get rid of after finish coding. Only here to confirm on the console
+  
+  var combined = ""
+    if (lowerchoice === true) {
+      var newcombined = combined.concat(lower);
+    }
+    else {
+      var newcombined = combined
+    }
+    if (upperchoice === true) {
+      var newercombined = newcombined.concat(upper);
+    }
+    else {
+      var newercombined = newcombined
+    }
+    if (numberchoice === true) {
+      var newestcombined = newercombined.concat(number);
+    }
+    else {
+      var newestcombined = newercombined
+    }
+    if (specialchoice === true) {
+      var finalcombined = newestcombined.concat(special);
+    }
+    else {
+      var finalcombined = newestcombined
+    }
+  console.log(finalcombined)
+
+
+  
   console.log("Hit confirm")  // get rid of after finish coding. Only here to confirm on the console
 
   // Need to prompt user with criteria for password
@@ -73,7 +128,6 @@ function generatePassword() {
 
 // Write password to the #password input
 function writePassword() {
-  choice();
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
